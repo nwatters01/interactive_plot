@@ -20,7 +20,7 @@ Plotly.d3.json(data_url, function(raw_data){
 			color: raw_data["0.72"].color,
 			line: {color: raw_data["0.72"].color, width: 0.5},
 			opacity: 1.0},
-		type: 'scatter3d'
+		type: 'scatter3d',
 	}];
 
 	// Create frames containing only the data we need to change for each slider
@@ -47,7 +47,7 @@ Plotly.d3.json(data_url, function(raw_data){
 				[key], {
 				mode: 'immediate',
 				frame: {redraw: true, duration: 500},
-				transition: {duration: 500}
+				transition: {duration: 500},
 				}
 			]
 		})
@@ -55,17 +55,25 @@ Plotly.d3.json(data_url, function(raw_data){
 
 	// Create layout with slider
 	var layout = {
+		margin: {t: 60},
+		title: {
+			text:'Factorized Representations',
+			font: {size: 28},
+			y: 0.95,
+		},
 		autosize: false,
 		width: 700,
 		height: 700,
-		yanchor: 'top',
+		yanchor: 'center',
+		xanchor: 'center',
+		// pad: {l: 0, r: 0, t: 100, b: 0},
 		sliders: [{
 			pad: {l: 0, r: 0, t: 20, b: 0},
 			currentvalue: {
 				visible: true,
 				prefix: 'Factorization Score:   ',
 				xanchor: 'center',
-				font: {size: 20, color: '#666'}
+				font: {size: 20, color: '#666'},
 			},
 			steps: sliderSteps,
 		}]
