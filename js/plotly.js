@@ -66,7 +66,6 @@ Plotly.d3.json(data_url, function(raw_data){
 		height: 700,
 		yanchor: 'center',
 		xanchor: 'center',
-		// pad: {l: 0, r: 0, t: 100, b: 0},
 		sliders: [{
 			pad: {l: 0, r: 0, t: 20, b: 0},
 			currentvalue: {
