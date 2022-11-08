@@ -28,7 +28,9 @@
 // 	};
 
 
-Plotly.d3.json("test_data.json", function(raw){
+let data_url = "https://raw.githubusercontent.com/nwatters01/interactive_plot/master/data/test_data.json";
+
+Plotly.d3.json(data_url, function(raw){
 
 	console.log("sup");
 
