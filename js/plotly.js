@@ -56,10 +56,11 @@ Plotly.d3.json(data_url, function(raw_data){
 	// Create layout with slider
 	var layout = {
 		autosize: false,
-		width: 800,
-		height: 800,
+		width: 700,
+		height: 700,
+		yanchor: 'top',
 		sliders: [{
-			pad: {l: 0, t: 55},
+			pad: {l: 0, r: 0, t: 20, b: 0},
 			currentvalue: {
 				visible: true,
 				prefix: 'Factorization Score:   ',
@@ -67,7 +68,6 @@ Plotly.d3.json(data_url, function(raw_data){
 				font: {size: 20, color: '#666'}
 			},
 			steps: sliderSteps,
-			name: "SLIDER"
 		}]
 	};
 		
