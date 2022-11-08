@@ -1,60 +1,65 @@
-// d3.json("samples.json").then((data) => {
-// 	var resultArray = data
-// 	.samples
-// 	.filter(sampleObj => {
-// 	  return sampleObj.id == sample
-// 	});
-	
-// 	var result = resultArray[0];
-	
-// 	var otu_ids = result.otu_ids.map(numericIds => {
-// 	  return numericIds;
-// 	}).reverse();
-	
-// 	var sample_values = result.sample_values.reverse();
-// 	var otu_labels = result.otu_labels.reverse();
-	
-// 	var bubble_trace = {
-	  
-// 	  x: otu_ids,  
-// 	  y: sample_values,
-// 	  text: otu_labels,
-// 	  mode: 'markers',
-// 	  marker: {
-// 		color: otu_ids,
-// 		size: sample_values
 
-// 	  }
+
+
+// let data_url = "https://raw.githubusercontent.com/nwatters01/interactive_plot/master/data/factorization_1.00.json";
+
+// Plotly.d3.json(data_url, function(raw){
+
+// 	console.log("sup");
+// 	console.log("hi");
+// 	console.log(data_url);
+
+// 	var trace1 = {
+// 		x: raw.x,
+// 		y: raw.y,
+// 		z: raw.z,
+// 		mode: 'markers',
+// 		marker: {
+// 			size: 12,
+// 			color: raw.color,
+// 			line: {color: raw.color, width: 0.5},
+// 			opacity: 0.8},
+// 		type: 'scatter3d'
 // 	};
 
+// 	var layout = {margin: {
+// 		l: 0,
+// 		r: 0,
+// 		b: 0,
+// 		t: 0
+// 	}};
+// 	Plotly.newPlot('myDiv', [trace1], layout);
+// });
 
-let data_url = "https://raw.githubusercontent.com/nwatters01/interactive_plot/master/data/test_data.json";
 
+let data_url = "https://raw.githubusercontent.com/nwatters01/interactive_plot/master/data/factorization_1.00.json";
+
+// var f_1
 Plotly.d3.json(data_url, function(raw){
-
-	console.log("sup");
-
-	var trace1 = {
-		x: raw["x"],
-		y: raw.y,
-		z: raw.z,
-		mode: 'markers',
-		marker: {
-			size: 12,
-			line: {
-			color: 'rgba(217, 217, 217, 0.14)',
-			width: 0.5},
-			opacity: 0.8},
-		type: 'scatter3d'
-	};
-
-
-	var data = [trace1];
-	var layout = {margin: {
-		l: 0,
-		r: 0,
-		b: 0,
-		t: 0
-	}};
-	Plotly.newPlot('myDiv', data, layout);
+	f_1 = raw
 });
+
+console.log("sup");
+console.log(f_1);
+console.log(data_url);
+
+var trace1 = {
+	x: f_1.x,
+	y: f_1.y,
+	z: f_1.z,
+	mode: 'markers',
+	marker: {
+		size: 12,
+		color: f_1.color,
+		line: {color: f_1.color, width: 0.5},
+		opacity: 0.8},
+	type: 'scatter3d'
+};
+
+var layout = {margin: {
+	l: 0,
+	r: 0,
+	b: 0,
+	t: 0
+}};
+Plotly.newPlot('myDiv', [trace1], layout);
