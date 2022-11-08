@@ -1,65 +1,81 @@
 
 
+let data_url = "https://raw.githubusercontent.com/nwatters01/interactive_plot/master/data/factorization_data.json";
 
-// let data_url = "https://raw.githubusercontent.com/nwatters01/interactive_plot/master/data/factorization_1.00.json";
+Plotly.d3.json(data_url, function(raw_data){
+	// raw_data is a dictionary {factorization_score: data} for a variety of
+	// factorization scores. data is of the form
+	// {x: [...], y: [...], z: [...], color: [...]}
 
-// Plotly.d3.json(data_url, function(raw){
+	// Create data containing the specifications for one plot, in this case
+	// randomly choosing factorizations core 0.72. The data will be overwritten
+	// by the slider.
+	var data = [{
+		x: raw_data["0.72"].x,
+		y: raw_data["0.72"].y,
+		z: raw_data["0.72"].z,
+		mode: 'markers',
+		marker: {
+			size: 12,
+			color: raw_data["0.72"].color,
+			line: {color: raw_data["0.72"].color, width: 0.5},
+			opacity: 1.0},
+		type: 'scatter3d'
+	}];
 
-// 	console.log("sup");
-// 	console.log("hi");
-// 	console.log(data_url);
+	// Create frames containing only the data we need to change for each slider
+	// step
+	var frames = [];
+	for (const [key, value] of Object.entries(raw_data)) {
+		frames.push({
+			name: key,
+			data: [{
+				x: value.x,
+				y: value.y,
+				z: value.z,
+			}]
+		})
+	}
 
-// 	var trace1 = {
-// 		x: raw.x,
-// 		y: raw.y,
-// 		z: raw.z,
-// 		mode: 'markers',
-// 		marker: {
-// 			size: 12,
-// 			color: raw.color,
-// 			line: {color: raw.color, width: 0.5},
-// 			opacity: 0.8},
-// 		type: 'scatter3d'
-// 	};
+	// Create slider steps
+	var sliderSteps = [];
+	for (const key in raw_data) {
+		sliderSteps.push({
+			label: key,
+			method: 'animate',
+			args: [
+				[key], {
+				mode: 'immediate',
+				frame: {redraw: true, duration: 500},
+				transition: {duration: 500}
+				}
+			]
+		})
+	}
 
-// 	var layout = {margin: {
-// 		l: 0,
-// 		r: 0,
-// 		b: 0,
-// 		t: 0
-// 	}};
-// 	Plotly.newPlot('myDiv', [trace1], layout);
-// });
+	// Create layout with slider
+	var layout = {
+		autosize: false,
+		width: 800,
+		height: 800,
+		sliders: [{
+			pad: {l: 0, t: 55},
+			currentvalue: {
+				visible: true,
+				prefix: 'Factorization Score:   ',
+				xanchor: 'center',
+				font: {size: 20, color: '#666'}
+			},
+			steps: sliderSteps,
+			name: "SLIDER"
+		}]
+	};
+		
+	// Create plot
+	Plotly.newPlot('myDiv', {
+		data: data,
+		layout: layout,
+		frames: frames,
+	});
 
-
-let data_url = "https://raw.githubusercontent.com/nwatters01/interactive_plot/master/data/factorization_1.00.json";
-
-// var f_1
-Plotly.d3.json(data_url, function(raw){
-	f_1 = raw
 });
-
-console.log("sup");
-console.log(f_1);
-console.log(data_url);
-
-var trace1 = {
-	x: f_1.x,
-	y: f_1.y,
-	z: f_1.z,
-	mode: 'markers',
-	marker: {
-		size: 12,
-		color: f_1.color,
-		line: {color: f_1.color, width: 0.5},
-		opacity: 0.8},
-	type: 'scatter3d'
-};
-
-var layout = {margin: {
-	l: 0,
-	r: 0,
-	b: 0,
-	t: 0
-}};
-Plotly.newPlot('myDiv', [trace1], layout);
