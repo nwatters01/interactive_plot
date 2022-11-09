@@ -3,10 +3,37 @@
 <head>
 <meta charset="utf-8">
 
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:20%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style>
+body{line-height:1.5em}
+#sidebar{padding:30px;overflow:hidden}
+#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}
+#footer p{margin:0 0 0 1em;display:inline-block}
+#footer p:last-child{margin-right:30px}
+h1,h2,h3,h4,h5{font-weight:300}
+h1{font-size:2.5em;line-height:1.1em}
+h2{font-size:1.75em;margin:1em 0 .50em 0}
+h3{font-size:1.4em;margin:25px 0 10px 0}
+h4{margin:0;font-size:105%}
+h1:target,h2:target,h3:target,h4:target,h5:target,h6:target
+{background:var(--highlight-color);padding:.2em 0}
+a{color:#058;text-decoration:none;transition:color}a:hover{color:#e82}
+</style>
+
+<style
+media="screen and (min-width: 700px)">@media screen and (min-width:700px){
+    #sidebar{width:20%;height:100vh;overflow:auto;position:sticky;top:0}
+    #content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}
+    .name{font-size:1em}main{display:flex;
+        flex-direction:row-reverse;
+        justify-content:flex-end}
+    #index ul{padding-left:1.5em}
+}
+</style>
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 </head>
 <body>
 <main>
@@ -27,60 +54,64 @@ Nick Watters
 <p>
     I fully agree with the readings this week arguing for non-traditional modes
     of scientific communication! Well-crafted visuals and interactive demos can
-    be so much more effective than traditional papers. Personally, Chris Olah
-    (co-founder of Distill) had a huge effect on me. I remember reading his
+    be so much more effective than traditional papers. Chris Olah (co-founder of
+    Distill) had a huge effect on me personally. I remember reading his
     <a href="https://colah.github.io/posts/2015-09-Visual-Information/">
         introduction to information theory</a>
-    in college. To this day I remember that blog post better than all of the
+    in college, and to this day I remember that blog post better than all of the
     classes I took that covered information theory. I've since read all of
     Chris's posts, which always use graphics and interactive plots to great
     effect. Similarly, I'm a huge fan of Distill, and learned so much from the
     beautifully-crafted publications there. 3Blue1Brown is also a channel I've
     been a fan of for a long time --- I've watched all of their videos and some
-    of them are permanently ingrained in my memory, even years later (such as
-    the
+    of them are permanently ingrained in my memory even years later (such as the
+    beautiful and mind-blowing
     <a href="https://www.youtube.com/watch?v=AmgkSdhK4K8&ab_channel=3Blue1Brown">
         inscribed rectangle post</a>).
 </p>
 
 <p>
-    I've always admired Distill-style posts, and a few years ago even began
-    drafting my own submission to Distill on variational autoencoders.
+    I've long been inspired by Distill-style posts, and a few years ago even
+    began drafting my own submission to Distill on variational autoencoders.
     Unfortunately I dropped that project because it was taking so much time, but
-    one day I hope to make interactive webpages for my future publications to
-    explain concepts more clearly than is possible in a static paper.
+    I do hope to make interactive webpages for my future publications to explain
+    concepts more clearly and to a broader audience than is possible with a
+    traditional paper.
 </p>
 
 <p>
-    I wish more scientists would use alternative modes of communication.
-    However, there are two major obstacles to this:
+    I wish more scientists would use animations and interactive plots to show
+    their work. However, there are two major obstacles:
     <ul>
     <li>
         There is little incentive. Scientists are evaluated primarily based on
         publications in journals, particularly high-impact journals. And
-        high-impact journals are still primarily stuck in the traditional mode.
+        high-impact journals are still stuck in the traditional mode.
     </li>
     <li>
         Making nice graphics and interactive webpages is time-consuming, often
         frustrating, and requires technical skills. For example, making the
-        interactive plot on this page (see below) took a couple hours of work
-        and involved programming in multiple langauges (in this case python,
+        interactive plot on this page (see below) took more than two hours and
+        involved programming in multiple langauges (in this case python,
         javascript, and html).
     </li>
     </ul>
     I think these obstacles can and should be overcome. For example:
     <ul>
     <li>
-        Major journals can include interactive papers. This could be in a
-        separate category (like review papers, articles, opinion papers, ...).
-        I would absolutely submit an interactive paper if it were an option at
-        the journals my lab typically submits to!
+        Major journals should accept papers with animations and interactive
+        plots. They could create a separate category for these (like review
+        papers, articles, opinion papers, ...). I would absolutely submit an
+        interactive paper if it were an option at the leading journals in my
+        field!
     </li>
     <li>
         MIT or the BCS department could offer resources to help us make
         interactive posts about our research. For example, imagine a small team
         of web and/or graphics designers that each week take one paper from the
-        MIT community and make a blog post about it. That would be fantastic!
+        MIT community and make a blog post about it. That would be fantastic,
+        and might benefit the broader public if the posts are interactive and
+        accessible without assuming much background knowledge.
     </li>
     </ul>
 </p>
@@ -129,22 +160,39 @@ Nick Watters
         Generalization</h2>
 </header>
 
-Generalization to novel conditions is a 
 <p>
-    Here are some embedded animations:
+    There's a lot of text I'd write here motivating and describing the project,
+    since my intended audience would be broad (anyone with high school level
+    math). But for this assignment I'm just going to focus on the visualizations
+    and interactive plot, so won't describe the science at all. I'll just
+    mention that we define a "factorized" embedding \(f\) to be one that
+    decomposes as a linear sum \(f(x, y) = f_x(x) + f_y(y)\). We then show that
+    factorized embeddings facilitate generalization of neural network models to
+    novel stimuli. Moreover, factorization seems to be exactly the criteria that
+    best predicts generalization, as opposed to linear decodability of factors,
+    orthogonality, disentangling, or other measures of structure in the
+    embedding.
 </p>
 
 <p>
-    <img src="https://github.com/nwatters01/interactive_plot/blob/master/gifs/deformation_0_cropped.gif?raw=true" width="150" hspace="5" vspace="20">
-    <img src="https://github.com/nwatters01/interactive_plot/blob/master/gifs/skew_0_cropped.gif?raw=true" width="200" hspace="10" vspace="20">
+    Below are some embedded animations showing spatial transformations. A
+    shearing (far left) preserves factorization. A distortion (center left) does
+    not preserve factorization. A quadratic warp (center right) preserves
+    factorization. A quartic warp (far right) does not preserve factorization.
+</p>
+
+<p>
+    <img src="https://github.com/nwatters01/interactive_plot/blob/master/gifs/skew_0_cropped.gif?raw=true" width="200" hspace="5" vspace="20">
+    <img src="https://github.com/nwatters01/interactive_plot/blob/master/gifs/deformation_0_cropped.gif?raw=true" width="150" hspace="10" vspace="20">
     <img src="https://github.com/nwatters01/interactive_plot/blob/master/gifs/z_factorized_0_cropped.gif?raw=true" width="150" hspace="10">
     <img src="https://github.com/nwatters01/interactive_plot/blob/master/gifs/z_unfactorized_0_cropped.gif?raw=true" width="150" hspace="10">
 </p>
 
 <p>
-    Below is an interactive plot. Use the slider at the bottom to adjust the
-    factorization score. Click and drag the plot to rotate it. Scroll to zoom.
-    Additional controls are in the panel in the top-right.
+    Below is an interactive plot that allows the reader to explore embeddings
+    with a variety of factorization scores. Use the slider at the bottom to
+    adjust the factorization score. Click and drag the plot to rotate it. Scroll
+    to zoom. Additional controls are in the panel in the top-right.
 </p>
 
 <div id='myDiv'></div>
@@ -169,9 +217,31 @@ Generalization to novel conditions is a
     and the associated paper. Give an example of something that is communicated
     more clearly in the non-traditional format.
 </p>
+
 <p>
-    <a href="https://www.youtube.com/watch?v=mGHKFMXdjKU&ab_channel=TwoMinutePapers">This
-        post</a> from "two minute papers".
+    I'll mention
+    <a href="https://www.youtube.com/watch?v=mGHKFMXdjKU&ab_channel=TwoMinutePapers">
+        this post</a>
+    from "two minute papers", about 
+    <a href="https://arxiv.org/abs/1901.11390">a paper</a> my collaborators and
+    I wrote a few years ago. This paper introduces a method to decompose and
+    represent a visual scene as a composition of objects. Both the
+    <a href="https://twitter.com/DeepMind/status/1109135265606569985">associated 
+        twitter post</a>
+    and the two-minute papers video communicate the behavior of the model a lot
+    more clearly than the static paper, because the videos allowed us to show
+    the model's "reconstruction" as the latent space was continuously traversed
+    (e.g. <a href="https://youtu.be/mGHKFMXdjKU?t=51">minute 0:51</a> in the
+    two-minute papers video).
+</p>
+
+<p>
+    The twitter thread and the two-minute papers video were better modalities
+    for communicating this work because they allowed video. They also both
+    likely contributed to a larger readership. However, they took a lot of time.
+    I remember spending many days with a couple of the other authors working on
+    the videos for the twitter thread, and several meetings with Karoly
+    discussing and preparing materials for the two-minute papers video.
 </p>
 
 </article>
@@ -183,7 +253,10 @@ Generalization to novel conditions is a
 </nav>
 </main>
 <footer id="footer">
-<p>created by Nick Watters <a href="nwatters@mit.edu"><cite>nwatters@mit.edu</cite></a></p>
+<p>
+    created by Nick Watters
+    (<a href="nwatters@mit.edu"><cite>nwatters@mit.edu</cite></a>)
+</p>
 </footer>
 </body>
 </html>

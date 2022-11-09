@@ -16,7 +16,7 @@ Plotly.d3.json(data_url, function(raw_data){
 		z: raw_data["0.72"].z,
 		mode: 'markers',
 		marker: {
-			size: 12,
+			size: 11,
 			color: raw_data["0.72"].color,
 			line: {color: raw_data["0.72"].color, width: 0.5},
 			opacity: 1.0},
@@ -55,19 +55,19 @@ Plotly.d3.json(data_url, function(raw_data){
 
 	// Create layout with slider
 	var layout = {
-		margin: {t: 60},
+		margin: {t: 0, b: 100},
 		title: {
-			text:'Factorized Representations',
+			text:'Factorized Representations Interactive Plot',
 			font: {size: 28},
 			y: 0.95,
 		},
 		autosize: false,
 		width: 700,
-		height: 700,
+		height: 650,
 		yanchor: 'center',
 		xanchor: 'center',
 		sliders: [{
-			pad: {l: 0, r: 0, t: 20, b: 0},
+			pad: {l: 0, r: 0, t: 20, b: 20},
 			currentvalue: {
 				visible: true,
 				prefix: 'Factorization Score:   ',
